@@ -16,5 +16,5 @@ telemetry_duplicates = telemetry_df.duplicated().sum()
 print(f"\nDuplicate rows in Telemetry: {telemetry_duplicates}")
 
 # 4. Basic summary after cleaning steps
-print("\n Data Cleaning & Preprocessing Successful ")
+print("\n Data Cleaning & Preprocessing Successful  ")
 print(f"Total processed telemetry rows: {len(telemetry_df)}")
