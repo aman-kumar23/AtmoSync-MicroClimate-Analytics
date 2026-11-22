@@ -21,3 +21,18 @@ merged_df['arbitrage_margin_per_kg'] = merged_df['secondary_market_price_per_kg'
 # 5. Display sample insights
 print(" Feature Engineering & Analytics Sample")
 print(merged_df[['container_id', 'commodity', 'temperature_c', 'threshold_temp_c', 'spoilage_risk_score', 'arbitrage_margin_per_kg']].head(5))
+
+# 6. Export processed data to CSV for Power BI
+merged_df.to_csv('processed_atmosync_data.csv', index=False)
+print("\n Success Processed data saved as 'processed_atmosync_data.csv")
+def classify_spoilage_risk(risk_score):
+    """Classify container spoilage risk into Low, Medium, or High tiers."""
+    if risk_score >= 0.75:
+        return "High"
+    elif risk_score >= 0.40:
+        return "Medium"
+    return "Low"
+
+
+merged_df["spoilage_risk_tier"] = merged_df["spoilage_risk_score"].apply(classify_spoilage_risk)
+print(merged_df["spoilage_risk_tier"].value_counts())
