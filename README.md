@@ -18,3 +18,14 @@ An advanced data analytics project focused on evaluating IoT sensor telemetry da
 * Analytics Summary (data_analysis.py): Prints dataset info along with top high-risk containers and commodity-wise spoilage and arbitrage summaries.
 
 * Power BI Dashboard (Atmosync-microclimate-dashboard.pbix): Visualizes container micro-climate trends, risk tiers, and market arbitrage opportunities.
+
+## Repository Structure & Execution Flow
+1. iot_simulator.py: Simulates raw micro-climate sensor telemetry (temperature_c, humidity_percent, vibration_g) across containers in transit.
+2. data_cleaning.py: Handles missing values, parses timestamps, removes duplicate telemetry records, and validates temperature ranges.
+3. feature_engineering.py : Calculates spoilage_risk_score, spoilage_risk_tier, and arbitrage_margin_per_kg, and exports processed_atmosync_data.csv.
+4. data_analysis.py : Generates analytical summaries by container ID and agricultural commodity to support decision-making.
+
+
+
+
+
